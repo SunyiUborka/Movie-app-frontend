@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import Navbar from "./components/Navbar.vue";
+import Content from './components/Content.vue';
 import './assets/main.css'
 </script>
 
@@ -8,8 +9,11 @@ import './assets/main.css'
   <header>
       <Navbar/>
   </header>
-
-  
+  <main>
+    <Content>
+      <RouterView/>
+    </Content>
+  </main>
 </template>
 
 <style scoped>
