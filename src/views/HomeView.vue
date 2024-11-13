@@ -1,9 +1,9 @@
 <script setup>
-import Content from '../components/Content.vue'
+    import Cinemas from '@/components/Cinemas.vue';
 </script>
 
 <template>
-
+    <Cinemas/>
 </template>
 
 <style>
