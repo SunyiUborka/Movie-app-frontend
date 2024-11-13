@@ -4,7 +4,7 @@
           <img src="/favicon.ico" alt="" class="h-10 w-auto my-2">
         </div>
         <div class="flex space-x-4 basis-3/4">
-          <div class="" >
+          <div>
             <RouterLink class="rounded-md px-4 py-2 text-base font-medium hover:bg-white hover:text-black hover:cursor-pointer" to="/">Főoldal</RouterLink>
             <RouterLink class="rounded-md px-4 py-2 text-base font-medium hover:bg-white hover:text-black hover:cursor-pointer" to="/about">Kapcsolat</RouterLink>
           </div>
