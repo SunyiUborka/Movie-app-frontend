@@ -1,10 +1,10 @@
 <script setup>
-    import { useCinemaStore } from '@/stores/cinemaStore';
+    import { useVenueStore } from '@/stores/venueStore';
     import L from 'leaflet'
     import 'leaflet/dist/leaflet.css';
     import { onMounted } from 'vue';
 
-    const cinemaStore = useCinemaStore()
+    const venueStore = useVenueStore()
     
     onMounted(async ()=>{               
         const map = L.map('map', {
@@ -17,8 +17,8 @@
             crossOrigin: true
         }).addTo(map);
 
-        cinemaStore.getVenues.forEach(e => {
-            L.marker([e.lat, e.lon]).addTo(map).bindPopup(`<span class="text-black">${e.hu}</span>`)
+        venueStore.getVenues.forEach(e => {
+            L.marker([e.lat, e.lon]).addTo(map).bindPopup(`<a class="text-black" href="/venue/${e.id}">${e.hu}</a>`)
         });
     })
 </script>

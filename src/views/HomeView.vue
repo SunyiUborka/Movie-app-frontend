@@ -1,11 +1,12 @@
 <script setup>
-    import Cinemas from '@/components/Cinemas.vue';
+    import Map from "@/components/Map.vue"
+    import VenueList from "@/components/VenueList.vue";
 </script>
 
 <template>
-    <Cinemas/>
+    <VenueList/>
+    <Map></Map>
 </template>
-
 <style>
 
 </style>
