@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import AboutView from '@/views/AboutView.vue'
 import VenueView from '@/views/VenueView.vue'
-import ScreeningDetails from '@/views/ScreeningDetails.vue'
+import ScreeningDetails from '@/views/ScreeningView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
