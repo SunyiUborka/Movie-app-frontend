@@ -3,9 +3,9 @@
     <div>
         <div class="flex">
             <div class="flex flex-col">
-                <span class="text-lg mb-2">Vetités: {{ new Date(screeningData.startEpochSeconds*1000).toLocaleDateString() }}</span>
-                <span class="text-lg mb-2">Időtartam: {{screeningData.lengthMins}} perc</span>
-                <span class="text-lg mb-2">Áttekintés: {{ movieData.overview }}</span>
+                <p class="text-lg mb-2"><span class="font-bold">Vetités:</span> {{ new Date(screeningData.startEpochSeconds*1000).toLocaleString([], {dateStyle: "full"}) }}</p>
+                <p class="text-lg mb-2"><span class="font-bold">Időtartam:</span> {{screeningData.lengthMins}} perc</p>
+                <p class="text-lg mb-2"><span class="font-bold">Áttekintés:</span> {{ movieData.overview }}</p>
             </div>
             <div>
                 <img class="max-w-60 ml-8" :src="`https://image.tmdb.org/t/p/original/${movieData.poster_path}`" :alt="`${screeningData.hu} poster`" :title="`${screeningData.hu} poster`">
