@@ -41,16 +41,14 @@ import { defineProps, defineEmits, reactive, ref } from 'vue';
 
 const props = defineProps({
   isVisible: Boolean,
-  title: {
-    type: String,
-    required: true
-  },
-  message: {
-    type: String,
-    required: true
-  },
   seat:{
     type: Object,
+    required: true
+  },
+  venueId:{
+    required: true
+  },
+  screeningId:{
     required: true
   }
 })
@@ -67,7 +65,7 @@ const postReservation = async () => {
   loading.value = true;
 
   try {
-    const res = await axios.post(`/api/v1/venue/1/screening/1/reserve`, userData);
+    const res = await axios.post(`/api/v1/venue/${props.venueId}/screening/${props.screeningId}/reserve`, userData);
     
     if(res.status == 200 && res.data == 0) alert("Sikeres helyfoglalás")
     if(res.status >= 400 && res.status < 500){

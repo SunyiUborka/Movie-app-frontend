@@ -1,6 +1,6 @@
 <template>
     <div :class="`grid grid-cols-${row} gap-8`">
-        <SeatItem v-for="seat in seats" :seat="seat"/>
+        <SeatItem v-for="seat in seats" :seat="seat" :screening-id="props.screeningId" :venue-id="props.venueId"/>
     </div>
 </template>
 <script setup>
