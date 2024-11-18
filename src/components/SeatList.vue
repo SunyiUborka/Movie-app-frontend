@@ -1,5 +1,5 @@
 <template>
-    <div :class="`grid grid-cols-${row} gap-8`">
+    <div :class="`grid gap-8`" :style="`grid-template-columns: repeat(${row}, minmax(0, 1fr));`">
         <SeatItem v-for="seat in seats" :seat="seat" :screening-id="props.screeningId" :venue-id="props.venueId"/>
     </div>
 </template>
