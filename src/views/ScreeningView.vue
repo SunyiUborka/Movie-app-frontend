@@ -1,7 +1,7 @@
 <template>
     <PageTitle :title="screeningData.hu" :subTitle="screeningData.en"/>
-    <div>
-        <div class="flex">
+    <div class="">
+        <div class="flex mb-8">
             <div class="flex flex-col">
                 <p class="text-lg mb-2"><span class="font-bold">Vetités:</span> {{ new Date(screeningData.startEpochSeconds*1000).toLocaleString([], {dateStyle: "full"}) }}</p>
                 <p class="text-lg mb-2"><span class="font-bold">Időtartam:</span> {{screeningData.lengthMins}} perc</p>
@@ -12,15 +12,18 @@
             </div>
         </div>
         <div>
-
+            <h2 class="text-lg font-bold mb-4">Férőhelyek</h2>
+           <SeatList :venueId="venueId" :screening-id="screeningId" />
         </div>
     </div>
 </template>
 <script setup>
 import { useVenueStore } from '@/stores/venueStore';
+import { useTmdbStore } from '@/stores/tmdbStore';
 import { computed, onMounted, ref } from 'vue';
 import PageTitle from '@/components/PageTitle.vue';
-import { useTmdbStore } from '@/stores/tmdbStore';
+import SeatList from '@/components/SeatList.vue';
+
 
     const props = defineProps({
         venueId:{
@@ -32,6 +35,7 @@ import { useTmdbStore } from '@/stores/tmdbStore';
     })
     const screening = ref(null)
     const movie = ref(null)
+    const seats = ref(null)
     const { venueId, screeningId } = props
     const screeningStore = useVenueStore()
     const tmdbStore = useTmdbStore()
@@ -40,8 +44,8 @@ import { useTmdbStore } from '@/stores/tmdbStore';
         screening.value = await screeningStore.getScreening(screeningId);
         await tmdbStore.fecthMovie(await screeningData.value)
         movie.value = tmdbStore.getMovie
-        console.log(tmdbStore.getMovie);
-        
+        await screeningStore.fetchSeats(venueId)
+        seats.value = screeningStore.getSeats
     })
     const screeningData = computed(()=> screening.value ?? {})
     const movieData = computed(()=> movie.value ?? {})
