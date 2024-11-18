@@ -7,7 +7,7 @@
         Feladatban Frontendnek <Link link="https://vuejs.org/" text="Vue.js"/>-t használtam, API callok és adataik tárolására <Link link="https://pinia.vuejs.org/" text="Pinia"/>-t használtam, megjeleníshez <Link link="https://tailwindcss.com/" text="Tailwind"/> és a térkép megjelenítésére meg <Link link="https://leafletjs.com/" text="Leaflet"/>-et.
     </p>
     <p class="text-lg mb-8">
-        A frontend repository elérhető <Link link="https://github.com/SunyiUborka/Simple-app-task" text="itt"/> és a backend test repository meg <Link link="https://github.com/SunyiUborka/Simple-backend" text="itt"/>.
+        A frontend repository elérhető <Link link="https://github.com/SunyiUborka/Movie-app" text="itt"/> és a backend test repository meg <Link link="https://github.com/SunyiUborka/Movie-backend" text="itt"/>.
     </p>
     <div class="flex justify-evenly flex-wrap">
         <img class="max-h-56" src="https://avatars.githubusercontent.com/u/6128107?s=200&v=4" alt="">
