@@ -37,7 +37,7 @@
 </template>
 <script setup>
 import axios from 'axios';
-import { defineProps, defineEmits, reactive, ref } from 'vue';
+import { reactive, ref } from 'vue';
 
 const props = defineProps({
   isVisible: Boolean,
