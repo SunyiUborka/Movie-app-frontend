@@ -4,7 +4,8 @@ import { defineStore } from 'pinia'
 export const useVenueStore = defineStore('venue',{
     state: () =>({
         venues: [],
-        screenings: []
+        screenings: [],
+        seats: []
     }),
     actions: {
         async fecthVenues(){
@@ -20,6 +21,9 @@ export const useVenueStore = defineStore('venue',{
             }catch(err){
                 console.log(err);
             }
+        },
+        async fetchSeats(venueId){
+            this.seats = (await axios(`/api/v1/venue/${venueId}/seats`)).data
         }
     }, 
     getters:{
@@ -30,6 +34,7 @@ export const useVenueStore = defineStore('venue',{
         getScreenings: (state) => state.screenings,
         getScreening: (state) => { 
             return (screeningId) => state.screenings.find((screening)=> screening.id == screeningId
-        )}
+        )},
+        getSeats: (state) => state.seats
     }
 })
