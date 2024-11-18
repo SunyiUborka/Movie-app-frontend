@@ -1,3 +1,13 @@
+## Installation
+1. Install [Docker](https://docs.docker.com/engine/install/) based on your Operation System
+2. Make a [The Movie DataBase](https://www.themoviedb.org/signup) account
+3. Get your [API key](https://www.themoviedb.org/settings/api) and copy
+4. In the src copy and rename the .env_example to .env
+5. Paste your api key in the .env
+6. Setup the backend proxy in the ```vite.config.js```
+7. (optional) If you want to use my [sample backend](https://github.com/SunyiUborka/Movie-backend), you don't need to set up a proxy
+8. Run ```docker-compose up```
+
 ## Programming Task
 
 * Write a web application based on the following description:
