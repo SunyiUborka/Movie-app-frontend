@@ -11,7 +11,7 @@ export default defineConfig({
   server:{
     proxy:{
       '/api':{
-        target: 'http://bubooo.ddns.net:3000'
+        target: 'http://localhost:3000'
       }
     }
   },
