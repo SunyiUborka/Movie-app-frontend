@@ -1,19 +1,19 @@
 <template>
     <PageTitle :title="screeningData.hu" :subTitle="screeningData.en"/>
     <div class="">
-        <div class="flex mb-8">
+        <div class="flex mb-8 flex-col-reverse md:flex-row">
             <div class="flex flex-col">
                 <p class="text-lg mb-2"><span class="font-bold">Vetités:</span> {{ new Date(screeningData.startEpochSeconds*1000).toLocaleString([], {dateStyle: "full"}) }}</p>
                 <p class="text-lg mb-2"><span class="font-bold">Időtartam:</span> {{screeningData.lengthMins}} perc</p>
                 <p class="text-lg mb-2"><span class="font-bold">Áttekintés:</span> {{ movieData.overview }}</p>
             </div>
             <div>
-                <img class="max-w-60 ml-8" :src="`https://image.tmdb.org/t/p/original/${movieData.poster_path}`" :alt="`${screeningData.hu} poster`" :title="`${screeningData.hu} poster`">
+                <img class="max-w-60 ml-8 my-4" :src="`https://image.tmdb.org/t/p/original/${movieData.poster_path}`" :alt="`${screeningData.hu} poster`" :title="`${screeningData.hu} poster`">
             </div>
         </div>
         <div>
             <h2 class="text-lg font-bold mb-4">Férőhelyek</h2>
-           <SeatList :venueId="venueId" :screening-id="screeningId" />
+           <SeatList class="overflow-auto" :venueId="venueId" :screening-id="screeningId" />
         </div>
     </div>
 </template>

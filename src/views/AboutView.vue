@@ -9,7 +9,7 @@
     <p class="text-lg mb-8">
         A frontend repository elérhető <Link link="https://github.com/SunyiUborka/Simple-app-task" text="itt"/> és a backend test repository meg <Link link="https://github.com/SunyiUborka/Simple-backend" text="itt"/>.
     </p>
-    <div class="flex justify-evenly">
+    <div class="flex justify-evenly flex-wrap">
         <img class="max-h-56" src="https://avatars.githubusercontent.com/u/6128107?s=200&v=4" alt="">
         <img class="max-h-56" src="https://camo.githubusercontent.com/beb4deef34ad522ffbbd05a815abf5b3b1f0943b6aff9ae5c64f356335fe0b99/68747470733a2f2f70696e69612e7675656a732e6f72672f6c6f676f2e737667" alt="">
         <img class="max-h-56" src="https://avatars.githubusercontent.com/u/67109815?s=200&v=4" alt="">
